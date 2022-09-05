@@ -1,0 +1,115 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #8d6c9c;
+    /* background-image: url('../images/55.jpg'); */
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+.head {
+    height: 80px;
+    background-color: #10487fc9;
+    /* position: fixed; */
+    width: 100%;
+}
+
+.icon{
+    float: left;
+}
+.icon img {
+    width: 120px;
+    height: 60px;
+    padding-left: 15px;
+    padding-top: 8px;
+}
+.navlinks {
+    float: right;
+    padding-top: 20px;
+}
+.navlinks a {
+    font-size: 28px;
+    font-weight: 600;
+    text-decoration: none;
+    padding-right: 40px;
+    color: #fff;
+    text-transform: uppercase;
+}
+aside {
+    float: left;
+    position: relative;
+    top: 10px;
+    display: grid;
+    z-index: -2;
+    color:#271624;
+    text-decoration: none;
+    font-size: 1.5rem;
+    width: 15%;
+}
+aside a {
+    text-decoration: none;
+}
+main {
+    float: right;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 5px;
+    position: relative;
+    top: 10px;
+    padding-top: 15px;
+    z-index: -2;
+    width: 85%;
+    align-items: center;
+}
+main div {
+    height: 400px;
+    background-color: #7f9a9fd7;
+    width: 370px;
+    
+}
+.products {
+    height: 400px;
+}
+.body {
+    z-index: -2;
+}
+.foot {
+    display: flex;
+    position: relative;
+    top: 80px;
+    background-color:#10487fc9;
+    width: 100%;
+    padding: 20px;
+    font-size: 25px;
+    color: #fff;
+}
+.myfoot {
+    color: #fff;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.product {
+    align-items: center;
+    padding-left: 30px;
+    color: #fff;
+}
+.product img {
+    padding-left: 25px;
+}
+.products h4 {
+    color: #fff;
+    font-size: 25px;
+}
+
+.myform{
+    padding: 30px 40px;
+}
+
+
+
+
+
+

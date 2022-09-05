@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> E-Cart </title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- head starts here -->
+        <div class="head">
+            <div class="icon">
+                <!-- <h2>E - Shopping</h2> -->
+                <img src="/static/images/t.jpg" alt="">
+                {% comment %}
+                {% if user.is_authenticated %}
+                <h4>Welcome {{ user.username }}</h4>
+                {% endif%}
+                {% endcomment %}
+            </div>
+            <div class="navlinks">
+                <nav>
+                    <a href="{% url 'shop' %}">Shop</a>
+                    <a href="{% url 'signin' %}">Sign-In</a>
+                    <a href="{% url 'signup' %}"> Sign-Up</a>
+                    {% if user.is_authenticated %}
+                    <a href="{% url 'signup' %}"> Logout</a>
+                    {% endif%}
+                </nav>
+            </div>
+        </div>
+        <!-- head ends here -->
+
+        <!-- body starts here -->
+        {% block content %}
+        <div class="body">
+            <aside>
+                <h3>Category</h3>
+                <a href="">Fashion</a>
+                <a href="">Automobiles</a>
+                <a href="">Accessories</a>
+                <a href="">Electronics</a>
+                <a href="">Household</a>
+
+                <h3>Blog</h3>
+                <a href="">Celebrities</a>
+                <a href="">Football</a>
+                <a href="">Politics</a>
+                <a href="">Economy</a>
+                <a href="">Education</a>
+
+                <h3>Contact</h3>
+                <a href="">Facebook</a>
+                <a href="">Twitter</a>
+
+            </aside>
+            <main>
+                
+                {% for i in products %}
+                    <div class="products" style="align-items: center;"> 
+                        <h4 style="color: white; text-align: center;">{{ i.name }}</h4>
+                        <img src="/image/{{i.image}}" alt="" width="250", height="180">
+                        <h4> {{ i.price }} <a href="#"> <button>Buy</button> </a></h4>  
+                    </div>
+                    
+                {% endfor %}
+                <!-- <div>a</div>
+                <div>b</div>
+                <div>d</div>
+                <div>e</div>
+                <div>d</div>
+                <div>w</div> -->
+
+            </main>
+        </div>
+        {% endblock %}
+        <!-- body ends here -->
+        <!-- foot start from here -->
+        <div class="foot">
+            <div class="myfoot">
+                <div>
+                    <h5>About</h5>
+                    Lorem ipsum dolor sit amet consectetur <br> adipisicing elit. Eveniet expedita
+                    <br> qui nulla enim est illum ex officia <br> minima consectetur quae, omnis, nihil non, <br> 
+                    hic numquam commodi nostrum <br> consequatur in deserunt!
+                </div>
+                <div>
+                    <h5>Profile</h5>
+                    <ul>
+                        <li>Something</li>
+                        <li>Something</li>
+                        <li>Something</li>
+                    </ul>
+                </div>
+                <div>
+                    <h5>Other Links</h5>
+                    <ul>
+                        <li>Something</li>
+                        <li>Something</li>
+                        <li>Something</li>
+                    </ul>
+
+                </div>
+            </div>
+            <footer>Copyrigth &copy; E-Shopping 2022</footer>
+        </div>
+        <!-- foot ends here -->
+    </div>
+    
+</body>
+</html>

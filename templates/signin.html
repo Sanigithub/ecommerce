@@ -1,0 +1,76 @@
+{% extends 'shop.html' %}
+
+{% block content %}
+<div id="myform">
+    <form action="" method="post">
+        {% csrf_token %}
+        {% for i in form%}
+        <div class="label"> {{ i.label }} </div>
+        <div> {{ i }} </div>
+        {% endfor %}
+        <div class="btn">
+            <button type="submit">Login</button>
+        </div>
+    </form>
+</div>
+
+<style>
+    *{
+    box-sizing: border-box;
+    }
+
+    #myform {
+        align-items: center;
+        position: relative;
+        top: 10px;
+        align-content: center;
+        padding-left: 40%;
+    }
+    .label {
+        color: aliceblue;
+        font-size: 32px;
+        width: 400px;
+        text-align: center;
+    }
+
+    form {
+        background-color: inherit;
+        width: 35px;
+        align-items: center;
+        align-content: center;
+        
+    }
+    form input {
+        width: 400px;
+        height: 50px;
+        border-radius: 4px;
+        display: block;
+        font-size: 14px;
+        padding: 10px;
+        background-color: rgba(174, 29, 135, 0.419);
+        color: white;
+    }
+    form label {
+        width: 400px;
+        color: #B2B8A3; 
+        display: block;
+        font-size: larger;
+    }
+    .btn {
+        padding-top: 5px;
+        padding-left: 100px;
+        margin-top: 20px;
+        
+        
+    }
+    .btn button {
+        text-transform: uppercase;
+        color: aliceblue;
+        font-size: 35px;
+        border-radius: 15px;
+        background-color: #10487fc9;
+        outline-color: rgba(174, 29, 135, 0.419);
+        width: 220px;
+    }
+</style>
+{% endblock %}
